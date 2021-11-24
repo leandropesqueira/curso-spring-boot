@@ -6,8 +6,10 @@ import java.net.URISyntaxException;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 @Configuration
+@Profile("prod")
 public class DataConfiguration {
 	
 	@Bean
@@ -22,7 +24,8 @@ public class DataConfiguration {
         basicDataSource.setUrl(dbUrl);
         basicDataSource.setUsername(username);
         basicDataSource.setPassword(password);
-
+        
+       
         return basicDataSource;
     }	
 
